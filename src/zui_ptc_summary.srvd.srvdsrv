@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service pénalités loi 69-21'
+define service ZUI_PTC_SUMMARY {
+  expose ZC_PTC_SUMMARY;
+}
