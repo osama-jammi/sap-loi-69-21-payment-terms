@@ -1,0 +1,11 @@
+@EndUserText.label : 'Paramètres loi 69-21'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zptc_param {
+  key client       : abap.clnt not null;
+  key valid_from   : abap.dats not null;
+  key_rate         : abap.dec(5,2);
+  default_days     : abap.int4;
+}
