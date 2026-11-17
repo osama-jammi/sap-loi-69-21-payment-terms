@@ -50,6 +50,18 @@ Principes : clean core (aucun objet standard modifié, uniquement des vues et AP
 | `zcl_ptc_query.clas.abap` | Fournit les données de l'entité personnalisée |
 | `zui_ptc_summary.srvd.srvdsrv` | Définition du service OData |
 
+## Version démo (sans données comptables réelles)
+
+Si la vue standard `I_OperationalAcctgDocItem` n'est pas disponible ou si le système ne contient aucune facture fournisseur, le dossier `src/demo/` fournit une alternative :
+
+| Fichier | Rôle |
+|---|---|
+| `zptc_invoice.tabl.astabl` | Table de factures fournisseurs fictives |
+| `zcl_ptc_fill_invoice.clas.abap` | Remplit la table (24 factures, 3 fournisseurs, retards variés) |
+| `zi_ptc_invoice.ddls.asddls` | Version de `ZI_PTC_INVOICE` qui lit cette table à la place de la vue standard |
+
+Marche à suivre : activer la table, exécuter `ZCL_PTC_FILL_INVOICE` (F9), puis remplacer le code de `ZI_PTC_INVOICE` par celui de `src/demo/`. Le reste du projet ne change pas. Les données sont fictives.
+
 ## Utilisation
 
 1. Importer les objets dans un package (ou les recréer dans ADT / Eclipse).

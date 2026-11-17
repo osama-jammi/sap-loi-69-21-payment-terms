@@ -1,0 +1,19 @@
+@EndUserText.label : 'Factures fournisseurs de démonstration (loi 69-21)'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
+define table zptc_invoice {
+  key client          : abap.clnt not null;
+  key company_code    : abap.char(4) not null;
+  key doc_number      : abap.char(10) not null;
+  key fiscal_year     : abap.numc(4) not null;
+  supplier            : abap.char(10);
+  supplier_name       : abap.char(40);
+  invoice_date        : abap.dats;
+  due_date            : abap.dats;
+  payment_date        : abap.dats;
+  @Semantics.amount.currencyCode : 'zptc_invoice.currency_code'
+  amount_ttc          : abap.curr(15,2);
+  currency_code       : abap.cuky;
+}
